@@ -17,7 +17,7 @@
 
 ## Description
 
-Au3VoiceActions [...] description [...].
+Au3VoiceActions is a tool which executes spoken commands on your computer to control your programs, your operation system and the computer behavior with the help of WebDriver and dictation.io.
 
 ## Features
 
