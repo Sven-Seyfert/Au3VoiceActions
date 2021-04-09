@@ -23,3 +23,4 @@ Global $sLanguage            = 'de-de'
 Global $iId                  = 1
 Global $sSavedDictationText  = ''
 Global $sVoiceAction         = ''
+Global $sFilePathSpeech      = @ScriptDir & '\' & @YEAR & @MON & @MDAY & @HOUR & @MIN & '.log'
