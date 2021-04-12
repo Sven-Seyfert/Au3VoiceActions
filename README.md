@@ -1,7 +1,7 @@
 #####
 
 <p align="center">
-    <img src="http://sven-seyfert.de/media/logo_circle.png" width="80" />
+    <img src="https://github.com/Sven-Seyfert/Au3VoiceActions/blob/main/media/favicon.ico" width="80" />
     <h2 align="center">Welcome to <code>Au3VoiceActions</code>【ツ】</h2>
 </p>
 
@@ -13,7 +13,7 @@
 ![os](https://img.shields.io/badge/os-windows-yellow.svg?style=flat-square&logo=windows)
 ![editor](https://img.shields.io/badge/editor-VSCode-blueviolet.svg?style=flat-square&logo=visual-studio-code)
 
-[Description](#description) | [Features](#features) | [Getting started](#getting-started) | [Configuration](#configuration) | [Keyboard Shortcuts](#keyboard-shortcuts) | [Tested](#tested) | [Contributing](#contributing)
+[Description](#description) | [Features](#features) | [Getting started](#getting-started) | [Configuration](#configuration) | [Keyboard shortcuts](#keyboard-shortcuts) | [Contributing](#contributing) | [License](#license) | [Acknowledgements](#acknowledgements)
 
 ## Description
 
@@ -21,15 +21,21 @@ Au3VoiceActions is a tool which executes spoken commands on your computer to con
 
 ## Features
 
-... to be defined ...
+To be defined [...]
 
 ## Getting started
 
-... to be defined ...
+#### *Preconditions*
+
+To be defined [...]
+
+#### *Installation*
+
+To be defined [...]
 
 ## Configuration
 
-... to be defined ...
+To be defined [...]
 
 ## Keyboard Shortcuts
 
@@ -38,21 +44,23 @@ Au3VoiceActions is a tool which executes spoken commands on your computer to con
 | ...    | ...      |
 | ...    | ...      |
 
-## Tested
-
-> SUT (system under test)
-
-| Property       | Win 7       | Win 10          | Win 10 Tablet |
-| :------------- | :---------- | :-------------- | :------------ |
-| @AutoItExe     | autoit3.exe | autoit3_x64.exe | autoit3.exe   |
-| @AutoItVersion | 3.3.14.2    | 3.3.14.2        | 3.3.14.5      |
-| @CPUArch       | X64         | X64             | X64           |
-| @OSArch        | X64         | X64             | X86           |
-| @OSVersion     | WIN_7       | WIN_10          | Win_10        |
-
 ## Contributing
 
-Just look at [CONTRIBUTING](https://github.com/Sven-Seyfert/Au3VoiceActions/blob/master/docs/CONTRIBUTING.md), thank you!
+Just look at [CONTRIBUTING](https://github.com/Sven-Seyfert/Au3VoiceActions/blob/main/docs/CONTRIBUTING.md), thank you!
+
+## License
+
+Distributed under the MIT License. See [LICENSE](https://github.com/Sven-Seyfert/Au3VoiceActions/blob/main/LICENSE.md) for more information.
+
+## Acknowledgements
+
+- Opportunity by [GitHub](https://github.com)
+- Badges by [Shields](https://shields.io)
+- Utilities components by
+  - [Danp2](https://github.com/Danp2/WebDriver) (WebDriver); [LICENSE](https://github.com/Danp2/WebDriver/blob/master/LICENSE)
+  - [Dragana-r](https://github.com/dragana-r/autoit-winhttp) (UDF WinHttp.au3); [LICENSE]()
+  - [Ward](https://www.autoitscript.com/forum/topic/148114-a-non-strict-json-udf-jsmn) (UDF Json.au3, UDF BinaryCall.au3); [LICENSE]()
+  - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) (Google); [LICENSE](https://www.nuget.org/packages/Selenium.WebDriver.ChromeDriver)
 
 ##
 
