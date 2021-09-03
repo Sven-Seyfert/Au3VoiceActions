@@ -23,10 +23,6 @@ Func _getCommandIndex( $aCommandTable )
 EndFunc
 
 Func _executeCommandAction( $aCommandTable, $iMatchIndex )
-    If $iMatchIndex == -1 Then
-        Return
-    EndIf
-
     Local $sActionFunction = $aCommandTable[$iMatchIndex][1]
 
     Call( $sActionFunction )
