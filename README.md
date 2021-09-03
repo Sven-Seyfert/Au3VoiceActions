@@ -21,6 +21,8 @@ Au3VoiceActions is a tool which executes spoken commands on your computer to con
 
 ## Features
 
+> The program is in an early proof of concept state but you already can set commands (via voice recognition by dictation.io) and some commands already will be interpreted and executes the actions behind the spoken commands.
+
 To be defined [...]
 
 ## Getting started

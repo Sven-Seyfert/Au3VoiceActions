@@ -2,8 +2,8 @@
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Icon=..\media\favicon.ico
 #AutoIt3Wrapper_Outfile_x64=..\build\Au3VoiceActions.exe
-#AutoIt3Wrapper_Res_Description=Au3VoiceActions (2021-07-07)
-#AutoIt3Wrapper_Res_Fileversion=0.3
+#AutoIt3Wrapper_Res_Description=Au3VoiceActions (2021-09-03)
+#AutoIt3Wrapper_Res_Fileversion=0.9.0
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_UseX64=y
 
@@ -24,9 +24,13 @@ If $aInst[0][0] > 1 Then Exit
 
 
 ; references -------------------------------------------------------------------
-#include "Declaration.au3"
-#include "BasicFunctions.au3"
-#include "Functions.au3"
+#include "DeclarationBuilder.au3"
+#include "CommandContainer.au3"
+#include "WebDriver.au3"
+#include "FunctionController.au3"
+#include "DictationPageController.au3"
+#include "ExecutionBuilder.au3"
+#include "ActionHandler.au3"
 
 
 
@@ -40,32 +44,33 @@ _navigateTo( $sBaseUrl )
 _setupDictationPage()
 _startDictation()
 
-Sleep( 10000 )
+Sleep( 2000 )
+Beep( 500, 250 )
 
 FileDelete( $sFilePathSpeech )
-MsgBox( 64, 'Information', 'This is the start.' )
 
 While True
-    Global $sCurrentDictationText = _getElementText( _getLastEditorText() )
+    Global $sLastParagraphOfEditor = _getLastParagraphOfEditor()
 
-    If $iId == 1 Then
-        _addToFile( $sFilePathSpeech, $iId & ': "' & StringTrimLeft( $sCurrentDictationText, 1 ) & '"' & @CRLF  )
+    If $sLastParagraphOfEditor <> '' Then
+        Global $sCurrentDictationText  = _getElementText( $sLastParagraphOfEditor )
+
+        If $sCurrentDictationText <> $sSavedDictationText Then
+            $sNewDictationText = StringReplace( $sCurrentDictationText, $sSavedDictationText, '' )
+            $sNewDictationText = StringTrimLeft( $sNewDictationText, 1 )
+
+            _appendToFile( $sFilePathSpeech, $iReadingIteration & ': "' & $sNewDictationText & '"' & @CRLF )
+            _executeValidCommendAction()
+
+            $sSavedDictationText = $sCurrentDictationText
+        EndIf
+
+        $iReadingIteration += 1
+
+        If $iReadingIteration >= 1000 Then ExitLoop
     EndIf
 
-    $iId += 1
-
-    If $sCurrentDictationText <> $sSavedDictationText Then
-        Global $sNewDictationText = StringReplace( $sCurrentDictationText, $sSavedDictationText, '' )
-                $sNewDictationText = StringTrimLeft( $sNewDictationText, 1 )
-
-        _addToFile( $sFilePathSpeech, $iId & ': "' & $sNewDictationText & '"' & @CRLF  )
-
-        $sSavedDictationText = $sCurrentDictationText
-    EndIf
-
-    If $iId >= 50 Then ExitLoop
-
-    Sleep( 1000 )
+    Sleep( 650 )
 WEnd
 
 MsgBox( 64, 'Information', 'This is the end.' )
