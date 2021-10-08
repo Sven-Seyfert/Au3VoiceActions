@@ -1,30 +1,30 @@
 Func _executeValidCommendAction()
-    If StringInStr( $sNewDictationText, $sIndicator, 2 ) == 0 Then
+    If StringInStr($sNewDictationText, $sIndicator, 2) == 0 Then
         Return
     EndIf
 
-    _executeCommandIfFound( $aOpenCommandTable )
-    _executeCommandIfFound( $aCloseCommandTable )
-    _executeCommandIfFound( $aMiscCommandTable )
+    _executeCommandIfFound($aOpenCommandTable)
+    _executeCommandIfFound($aCloseCommandTable)
+    _executeCommandIfFound($aMiscCommandTable)
 EndFunc
 
-Func _executeCommandIfFound( $aCommandTable )
-    Local $iMatchIndex = _getCommandIndex( $aCommandTable )
+Func _executeCommandIfFound($aCommandTable)
+    Local $iMatchIndex = _getCommandIndex($aCommandTable)
 
     If $iMatchIndex == -1 Then
         Return
     EndIf
 
-    _executeCommandAction( $aCommandTable, $iMatchIndex )
+    _executeCommandAction($aCommandTable, $iMatchIndex)
 EndFunc
 
-Func _getCommandIndex( $aCommandTable )
-    Return _ArraySearch( $aCommandTable, StringReplace( $sNewDictationText, $sIndicator, '' ) )
+Func _getCommandIndex($aCommandTable)
+    Return _ArraySearch($aCommandTable, StringReplace($sNewDictationText, $sIndicator, ''))
 EndFunc
 
-Func _executeCommandAction( $aCommandTable, $iMatchIndex )
+Func _executeCommandAction($aCommandTable, $iMatchIndex)
     Local $sActionFunction = $aCommandTable[$iMatchIndex][1]
 
-    Call( $sActionFunction )
+    Call($sActionFunction)
 EndFunc
 

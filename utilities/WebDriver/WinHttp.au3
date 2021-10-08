@@ -2014,7 +2014,7 @@ Func __WinHttpFileContent($sAccept, $sName, $sFileString, $sBoundaryMain = "")
 			If $i < $iFiles - 1 Then $sOut &= "--" & $sBoundaryMain & @CRLF
 		Next
 	Else
-		; RFC2388 ( http://www.ietf.org/rfc/rfc2388.txt )
+		; RFC2388 (http://www.ietf.org/rfc/rfc2388.txt)
 		Local $sBoundary = StringFormat("%s%.5f", "----WinHttpSubBoundaryLine_", Random(10000, 99999))
 		$sOut &= @CRLF & "Content-Type: multipart/mixed; boundary=" & $sBoundary & @CRLF & @CRLF
 		For $i = 0 To UBound($aFiles) - 1

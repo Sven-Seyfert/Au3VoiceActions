@@ -2,16 +2,16 @@
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Icon=..\media\favicon.ico
 #AutoIt3Wrapper_Outfile_x64=..\build\Au3VoiceActions.exe
-#AutoIt3Wrapper_Res_Description=Au3VoiceActions (2021-09-03)
-#AutoIt3Wrapper_Res_Fileversion=0.9.0
+#AutoIt3Wrapper_Res_Description=Au3VoiceActions (2021-10-08)
+#AutoIt3Wrapper_Res_Fileversion=1.0.0
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_UseX64=y
 
 
 
 ; opt and just singleton -------------------------------------------------------
-Opt( 'MustDeclareVars', 1 )
-Global $aInst = ProcessList( 'Au3VoiceActions.exe' )
+Opt('MustDeclareVars', 1)
+Global $aInst = ProcessList('Au3VoiceActions.exe')
 If $aInst[0][0] > 1 Then Exit
 
 
@@ -38,28 +38,28 @@ If $aInst[0][0] > 1 Then Exit
 _setupChromeDriver()
 _startChromeDriverSession()
 
-WinSetState( 'data:, - Google Chrome', '', @SW_HIDE )
+WinSetState('data:, - Google Chrome', '', @SW_HIDE)
 
-_navigateTo( $sBaseUrl )
+_navigateTo($sBaseUrl)
 _setupDictationPage()
 _startDictation()
 
-Sleep( 2000 )
-Beep( 500, 250 )
+Sleep(2000)
+Beep(500, 250)
 
-FileDelete( $sFilePathSpeech )
+FileDelete($sFilePathSpeech)
 
 While True
     Global $sLastParagraphOfEditor = _getLastParagraphOfEditor()
 
     If $sLastParagraphOfEditor <> '' Then
-        Global $sCurrentDictationText  = _getElementText( $sLastParagraphOfEditor )
+        Global $sCurrentDictationText  = _getElementText($sLastParagraphOfEditor)
 
         If $sCurrentDictationText <> $sSavedDictationText Then
-            $sNewDictationText = StringReplace( $sCurrentDictationText, $sSavedDictationText, '' )
-            $sNewDictationText = StringTrimLeft( $sNewDictationText, 1 )
+            $sNewDictationText = StringReplace($sCurrentDictationText, $sSavedDictationText, '')
+            $sNewDictationText = StringTrimLeft($sNewDictationText, 1)
 
-            _appendToFile( $sFilePathSpeech, $iReadingIteration & ': "' & $sNewDictationText & '"' & @CRLF )
+            _appendToFile($sFilePathSpeech, $iReadingIteration & ': "' & $sNewDictationText & '"' & @CRLF)
             _executeValidCommendAction()
 
             $sSavedDictationText = $sCurrentDictationText
@@ -70,9 +70,9 @@ While True
         If $iReadingIteration >= 1000 Then ExitLoop
     EndIf
 
-    Sleep( 650 )
+    Sleep(650)
 WEnd
 
-MsgBox( 64, 'Information', 'This is the end.' )
+MsgBox(64, 'Information', 'This is the end.')
 
 _teardownChromeDriver()

@@ -3,22 +3,22 @@ Func _setupDictationPage()
     Local $sLanguageDropdownOptionSelector = "//select[@id='lang']/option[@value='" & $sLanguage & "']"
     Local $sLanguageDropdownSelector       = "//select[@id='lang']"
 
-    _clickElement( _findElement( $sLanguageDropdownSelector ) )
-    _clickElement( _findElement( $sLanguageDropdownOptionSelector ) )
+    _clickElement(_findElement($sLanguageDropdownSelector))
+    _clickElement(_findElement($sLanguageDropdownOptionSelector))
 
-    _showWaitingTooltip( 15 )
+    _showWaitingTooltip(15)
 
-    _clickElement( _findElement( $sClearSelector ) )
+    _clickElement(_findElement($sClearSelector))
 EndFunc
 
 Func _startDictation()
     Local $sStartSelector = "//span[@class='btn__text listen'][contains(., 'Start')]"
 
-    _clickElement( _findElement( $sStartSelector ) )
+    _clickElement(_findElement($sStartSelector))
 EndFunc
 
 Func _getLastParagraphOfEditor()
     Local $sTextSelector  = "//div[@class='ql-editor']/p[last()]"
 
-    Return _findElement( $sTextSelector )
+    Return _findElement($sTextSelector)
 EndFunc
