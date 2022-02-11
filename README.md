@@ -94,9 +94,9 @@ Distributed under the MIT License. See [LICENSE](https://github.com/Sven-Seyfert
 - Badges by [Shields](https://shields.io)
 - Utilities components by
   - [Danp2](https://github.com/Danp2/WebDriver) (WebDriver); [LICENSE](https://github.com/Danp2/WebDriver/blob/master/LICENSE)
-  - [Dragana-r](https://github.com/dragana-r/autoit-winhttp) (UDF WinHttp.au3); [LICENSE]()
-  - [Ward](https://www.autoitscript.com/forum/topic/148114-a-non-strict-json-udf-jsmn) (UDF Json.au3, UDF BinaryCall.au3); [LICENSE]()
-  - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) (Google); [LICENSE](https://www.nuget.org/packages/Selenium.WebDriver.ChromeDriver)
+  - [Dragana-r](https://github.com/dragana-r/autoit-winhttp/releases/latest) (UDF WinHttp.au3); [LICENSE]()
+  - [Ward and Jos](https://www.autoitscript.com/forum/topic/148114-a-non-strict-json-udf-jsmn) (UDF Json.au3, UDF BinaryCall.au3); [LICENSE]()
+  - [ChromeDriver](https://chromedriver.chromium.org/downloads) (Google); [LICENSE](https://source.chromium.org/chromium/chromium/src/+/main:LICENSE)
 
 ##
 
