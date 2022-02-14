@@ -1,4 +1,4 @@
-Global $aOpenCommandTable[6][2] = _
+Global $aOpenCommandTable[][2] = _
     [ _
         ['öffne firefox',                '_OpenFirefox'], _
         ['öffne chrome',                 '_OpenChrome'], _
@@ -8,14 +8,14 @@ Global $aOpenCommandTable[6][2] = _
         ['öffne ordner test automation', '_OpenFolderTestautomation'] _
     ]
 
-Global $aCloseCommandTable[2][2] = _
+Global $aCloseCommandTable[][2] = _
     [ _
         ['schließe fenster',           '_CloseActiveWindow'], _
         ['schließe aktuelles fenster', '_CloseActiveWindow'] _
     ]
 
 
-Global $aMiscCommandTable[3][2] = _
+Global $aMiscCommandTable[][2] = _
     [ _
         ['beende aufnahme',   '_TeardownAndExit'], _
         ['maximiere fenster', '_MaximizeWindow'], _
