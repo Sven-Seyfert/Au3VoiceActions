@@ -1,9 +1,9 @@
 ; compiler information for AutoIt
 #pragma compile(CompanyName, © SOLVE SMART)
-#pragma compile(FileVersion, 1.3.0)
+#pragma compile(FileVersion, 1.4.0)
 #pragma compile(LegalCopyright, © Sven Seyfert)
 #pragma compile(ProductName, Au3VoiceActions)
-#pragma compile(ProductVersion, 1.3.0 - 2022-02-10)
+#pragma compile(ProductVersion, 1.4.0 - 2022-02-14)
 
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Icon=..\media\favicon.ico
@@ -39,14 +39,14 @@ If $aInst[0][0] > 1 Then Exit
 
 
 ; processing -------------------------------------------------------------------
-_setupChromeDriver()
-_startChromeDriverSession()
+_SetupChromeDriver()
+_StartChromeDriverSession()
 
 WinSetState('data:, - Google Chrome', '', @SW_HIDE)
 
-_navigateTo($sBaseUrl)
-_setupDictationPage()
-_startDictation()
+_NavigateTo($sBaseUrl)
+_SetupDictationPage()
+_StartDictation()
 
 Sleep(2000)
 Beep(500, 250)
@@ -54,17 +54,17 @@ Beep(500, 250)
 FileDelete($sFilePathSpeech)
 
 While True
-    Global $sLastParagraphOfEditor = _getLastParagraphOfEditor()
+    Global $sLastParagraphOfEditor = _GetLastParagraphOfEditor()
 
     If $sLastParagraphOfEditor <> '' Then
-        Global $sCurrentDictationText  = _getElementText($sLastParagraphOfEditor)
+        Global $sCurrentDictationText  = _GetElementText($sLastParagraphOfEditor)
 
         If $sCurrentDictationText <> $sSavedDictationText Then
             $sNewDictationText = StringReplace($sCurrentDictationText, $sSavedDictationText, '')
             $sNewDictationText = StringTrimLeft($sNewDictationText, 1)
 
-            _appendToFile($sFilePathSpeech, $iReadingIteration & ': "' & $sNewDictationText & '"' & @CRLF)
-            _executeValidCommendAction()
+            _AppendToFile($sFilePathSpeech, $iReadingIteration & ': "' & $sNewDictationText & '"' & @CRLF)
+            _ExecuteValidCommendAction()
 
             $sSavedDictationText = $sCurrentDictationText
         EndIf
@@ -79,4 +79,4 @@ WEnd
 
 MsgBox(64, 'Information', 'This is the end.')
 
-_teardownChromeDriver()
+_TeardownChromeDriver()

@@ -1,23 +1,23 @@
 Global $aOpenCommandTable[6][2] = _
     [ _
-        ['öffne firefox',                '_openFirefox'], _
-        ['öffne chrome',                 '_openChrome'], _
-        ['öffne cmd',                    '_openCmd'], _
-        ['öffne code',                   '_openCode'], _
-        ['öffne ordner github',          '_openFolderGitHub'], _
-        ['öffne ordner test automation', '_openFolderTestautomation'] _
+        ['öffne firefox',                '_OpenFirefox'], _
+        ['öffne chrome',                 '_OpenChrome'], _
+        ['öffne cmd',                    '_OpenCmd'], _
+        ['öffne code',                   '_OpenCode'], _
+        ['öffne ordner github',          '_OpenFolderGitHub'], _
+        ['öffne ordner test automation', '_OpenFolderTestautomation'] _
     ]
 
 Global $aCloseCommandTable[2][2] = _
     [ _
-        ['schließe fenster',           '_closeActiveWindow'], _
-        ['schließe aktuelles fenster', '_closeActiveWindow'] _
+        ['schließe fenster',           '_CloseActiveWindow'], _
+        ['schließe aktuelles fenster', '_CloseActiveWindow'] _
     ]
 
 
 Global $aMiscCommandTable[3][2] = _
     [ _
-        ['beende aufnahme',   '_teardownAndExit'], _
-        ['maximiere fenster', '_maximizeWindow'], _
-        ['sperre computer',   '_lockComputer'] _
+        ['beende aufnahme',   '_TeardownAndExit'], _
+        ['maximiere fenster', '_MaximizeWindow'], _
+        ['sperre computer',   '_LockComputer'] _
     ]

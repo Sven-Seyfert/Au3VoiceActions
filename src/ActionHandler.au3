@@ -1,43 +1,43 @@
-Func _openFirefox()
-    _cmd('start firefox')
+Func _OpenFirefox()
+    _Cmd('start firefox')
 EndFunc
 
-Func _openChrome()
-    _cmd('start chrome')
+Func _OpenChrome()
+    _Cmd('start chrome')
 EndFunc
 
-Func _openCmd()
-    _cmd('start cmd')
+Func _OpenCmd()
+    _Cmd('start cmd')
 EndFunc
 
-Func _openCode()
-    _cmd('code')
+Func _OpenCode()
+    _Cmd('code')
 EndFunc
 
-Func _openFolderGitHub()
-    _cmd('start C:\LocalWorkspace\GitHub')
+Func _OpenFolderGitHub()
+    _Cmd('start C:\LocalWorkspace\GitHub')
 EndFunc
 
-Func _openFolderTestautomation()
-    _cmd('start D:\LocalRepos\Value.Testautomation')
+Func _OpenFolderTestautomation()
+    _Cmd('start D:\LocalRepos\Value.Testautomation')
 EndFunc
 
-Func _teardownAndExit()
-    _teardownChromeDriver()
+Func _TeardownAndExit()
+    _TeardownChromeDriver()
 
     Beep(500, 250)
 
     Exit
 EndFunc
 
-Func _closeActiveWindow()
+Func _CloseActiveWindow()
     WinClose(WinGetTitle('[active]'))
 EndFunc
 
-Func _maximizeWindow()
+Func _MaximizeWindow()
     WinSetState(WinGetTitle('[active]'), '', @SW_MAXIMIZE)
 EndFunc
 
-Func _lockComputer()
+Func _LockComputer()
     DllCall('user32.dll', 'int', 'LockWorkStation')
 EndFunc
