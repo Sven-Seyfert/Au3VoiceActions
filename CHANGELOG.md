@@ -11,6 +11,16 @@ Go to [legend](#legend---types-of-changes) for further information about the typ
 
 ## [Unreleased]
 
+## [1.5.0] - 2022-08-05
+
+### Added
+
+- Unreleased section to changelog file.
+
+### Changed
+
+- Project file structure to fit the default from Au3NewProject.
+
 ## [1.4.0] - 2022-02-14
 
 ### Changed
@@ -68,7 +78,8 @@ Go to [legend](#legend---types-of-changes) for further information about the typ
 - General restructuring into more separated au3 files.
 - Update chromedriver dependencies.
 
-[Unreleased]: https://github.com/Sven-Seyfert/Au3VoiceActions/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/Sven-Seyfert/Au3VoiceActions/compare/v1.5.0...HEAD
+[1.5.0]: https://github.com/Sven-Seyfert/Au3VoiceActions/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/Sven-Seyfert/Au3VoiceActions/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/Sven-Seyfert/Au3VoiceActions/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/Sven-Seyfert/Au3VoiceActions/compare/v1.1.0...v1.2.0
